@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mindway-pdf-gateway",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": true,
+  "observability": { "enabled": false },
+  "vars": {
+    "FIREBASE_PROJECT_ID": "replace-with-project-id",
+    "FIREBASE_PROJECT_NUMBER": "000000000000",
+    "FIREBASE_ANDROID_APP_IDS": "1:000000000000:android:replace",
+    "MAX_PDF_BYTES": "41943040"
+  },
+  "r2_buckets": [{ "binding": "R2_BUCKET", "bucket_name": "mindway-pdfs", "preview_bucket_name": "mindway-pdfs-preview" }]
+}

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Mindway Maths</string>
+    <string name="tagline">Small steps. Stronger scores.</string>
+    <string name="google_continue">Continue with Google</string>
+    <string name="login_heading">Your next rank\nstarts here.</string>
+    <string name="login_body">Focused aptitude and reasoning practice for the exam you’re working towards.</string>
+    <string name="configuration_required">Connect your Firebase project to enable secure Google sign-in. See docs/FIREBASE_SETUP.md.</string>
+    <string name="ready">Ready to improve your score?</string>
+    <string name="home">Home</string><string name="practice">Practice</string><string name="tests">Tests</string><string name="videos">Videos</string><string name="pdfs">PDFs</string><string name="progress">Progress</string><string name="profile">Profile</string>
+    <string name="offline">No internet connection. Your saved practice is still available.</string>
+    <string name="retry">Retry</string><string name="back">Back</string><string name="next">Next</string><string name="previous">Previous</string>
+    <string name="submit">Submit</string><string name="cancel">Cancel</string><string name="loading">Loading…</string>
+    <string name="empty_content">Nothing here yet. Refresh when you’re online.</string>
+    <string name="network_error">Couldn’t connect. Your progress is saved on this device. Please try again.</string>
+    <string name="material_error">Study material is temporarily unavailable. Please try again.</string>
+    <string name="reminder_title">A little practice goes a long way</string>
+    <string name="reminder_body">Make time for today’s Mindway Maths practice.</string>
+    <string name="reminder_channel">Practice reminders</string>
+    <string name="logout">Log out</string><string name="delete_account">Delete account</string>
+    <string name="legal_placeholder">Configurable legal content — must be reviewed and replaced by the publisher before release. Contact and public data-deletion request URL must be supplied.</string>
+    <string name="question_position">Question %1$d of %2$d</string>
+    <string name="page_position">Page %1$d of %2$d</string>
+    <string name="correct">Correct</string><string name="incorrect">Incorrect</string>
+    <string name="daily_challenge">Today’s Challenge</string>
+</resources>

@@ -1,0 +1,6 @@
+# Public client configuration only. Store local overrides in ~/.gradle/gradle.properties.
+MINDWAY_WEB_CLIENT_ID=replace-with-web-oauth-client.apps.googleusercontent.com
+MINDWAY_BACKEND_URL=https://mindway-pdf-gateway.your-subdomain.workers.dev/
+MINDWAY_YOUTUBE_ORIGIN=https://your-owned-site.pages.dev
+# Firebase Android config goes in app/google-services.json, never a service-account file.
+# Signing private keys and passwords belong in Android Studio / CI secret storage.

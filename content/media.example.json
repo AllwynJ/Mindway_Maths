@@ -1,0 +1,8 @@
+{
+  "videos": [
+    { "id": "percentage-intro", "title": "Percentage fundamentals", "description": "Replace the placeholder video ID with your own unlisted lesson before activating.", "youtubeVideoId": "REPLACE_ID1", "visibility": "unlisted", "topicId": "percentage", "subject": "aptitude", "exam": "ssc", "duration": 600, "order": 1, "isActive": false }
+  ],
+  "pdfs": [
+    { "id": "percentages-notes", "title": "Percentage revision notes", "description": "Activate after uploading the matching private R2 PDF and manifest.", "subject": "aptitude", "topic": "percentage", "exam": "ssc", "pageCount": 8, "fileSize": 240000, "sortOrder": 1, "isActive": false }
+  ]
+}

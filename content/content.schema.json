@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mindway.example/schemas/content.json",
+  "title": "Mindway content import bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "exams": { "type": "array", "items": { "$ref": "#/$defs/catalog" } },
+    "subjects": { "type": "array", "items": { "$ref": "#/$defs/catalog" } },
+    "topics": { "type": "array", "items": { "$ref": "#/$defs/catalog" } },
+    "questions": { "type": "array", "items": { "$ref": "#/$defs/question" } },
+    "videos": { "type": "array", "items": { "$ref": "#/$defs/video" } },
+    "pdfs": { "type": "array", "items": { "$ref": "#/$defs/pdf" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,100}$" },
+    "catalog": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title", "isActive"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "subject": { "type": "string" }, "exam": { "type": "string" }, "order": { "type": "integer" }, "isActive": { "type": "boolean" } }
+    },
+    "question": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "exam", "subject", "topic", "difficulty", "type", "questionText", "explanation", "isActive"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "exam": { "$ref": "#/$defs/id" }, "subject": { "$ref": "#/$defs/id" }, "topic": { "$ref": "#/$defs/id" },
+        "subtopic": { "type": "string" }, "difficulty": { "enum": ["Easy", "Medium", "Hard"] }, "type": { "enum": ["MCQ", "NUMERICAL", "TRUE_FALSE"] },
+        "questionText": { "type": "string", "minLength": 1, "maxLength": 4000 }, "imageUrl": { "type": "string", "pattern": "^https://" },
+        "options": { "type": "array", "minItems": 2, "maxItems": 8, "items": { "type": "string", "maxLength": 1000 } },
+        "correctOption": { "type": "integer", "minimum": 0, "maximum": 7 }, "numericalAnswer": { "type": "number" }, "tolerance": { "type": "number", "minimum": 0 },
+        "explanation": { "type": "string", "minLength": 1, "maxLength": 8000 }, "shortcut": { "type": "string", "maxLength": 4000 }, "solution": { "type": "string", "maxLength": 8000 },
+        "source": { "type": "string" }, "tags": { "type": "array", "items": { "type": "string" } }, "year": { "type": "integer", "minimum": 1950, "maximum": 2100 },
+        "isActive": { "type": "boolean" }, "createdAt": { "type": "integer" }, "updatedAt": { "type": "integer" }
+      },
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "NUMERICAL" } } }, "then": { "required": ["numericalAnswer"] }, "else": { "required": ["options", "correctOption"] } },
+        { "if": { "properties": { "type": { "const": "MCQ" } } }, "then": { "properties": { "options": { "minItems": 4 } } } }
+      ]
+    },
+    "video": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title", "youtubeVideoId", "topicId", "visibility", "isActive"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "type": "string" }, "description": { "type": "string" },
+        "youtubeVideoId": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" }, "visibility": { "const": "unlisted" }, "thumbnailUrl": { "type": "string", "pattern": "^https://" },
+        "topicId": { "$ref": "#/$defs/id" }, "subject": { "$ref": "#/$defs/id" }, "exam": { "$ref": "#/$defs/id" }, "duration": { "type": "integer", "minimum": 0 },
+        "order": { "type": "integer" }, "isActive": { "type": "boolean" }, "createdAt": { "type": "integer" }, "updatedAt": { "type": "integer" } }
+    },
+    "pdf": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title", "topic", "isActive"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "type": "string" }, "description": { "type": "string" },
+        "topic": { "$ref": "#/$defs/id" }, "subject": { "$ref": "#/$defs/id" }, "exam": { "$ref": "#/$defs/id" },
+        "pageCount": { "type": "integer", "minimum": 1 }, "fileSize": { "type": "integer", "minimum": 1, "maximum": 41943040 },
+        "thumbnailUrl": { "type": "string", "pattern": "^https://" }, "sortOrder": { "type": "integer" },
+        "isActive": { "type": "boolean" }, "createdAt": { "type": "integer" }, "updatedAt": { "type": "integer" } }
+    }
+  }
+}

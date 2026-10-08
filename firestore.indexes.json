@@ -1,0 +1,15 @@
+{
+  "indexes": [
+    { "collectionGroup": "questions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "exam", "order": "ASCENDING" }, { "fieldPath": "subject", "order": "ASCENDING" }] },
+    { "collectionGroup": "questions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "exam", "order": "ASCENDING" }, { "fieldPath": "subject", "order": "ASCENDING" }, { "fieldPath": "topic", "order": "ASCENDING" }] },
+    { "collectionGroup": "questions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "exam", "order": "ASCENDING" }, { "fieldPath": "topic", "order": "ASCENDING" }] }
+  ],
+  "fieldOverrides": [
+    { "collectionGroup": "questions", "fieldPath": "explanation", "indexes": [] },
+    { "collectionGroup": "questions", "fieldPath": "solution", "indexes": [] },
+    { "collectionGroup": "questions", "fieldPath": "shortcut", "indexes": [] },
+    { "collectionGroup": "questions", "fieldPath": "options", "indexes": [] },
+    { "collectionGroup": "testHistory", "fieldPath": "snapshot", "indexes": [] },
+    { "collectionGroup": "testHistory", "fieldPath": "payload", "indexes": [] }
+  ]
+}

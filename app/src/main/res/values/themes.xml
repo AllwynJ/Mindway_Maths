@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.MindwayMaths" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorAccent">#176B54</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+    <style name="Theme.MindwayMaths.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#F5F7F2</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_mindway</item>
+        <item name="postSplashScreenTheme">@style/Theme.MindwayMaths</item>
+    </style>
+</resources>
